@@ -63,6 +63,7 @@
             // 
             this.estudiantesToolStripMenuItem1.Name = "estudiantesToolStripMenuItem1";
             resources.ApplyResources(this.estudiantesToolStripMenuItem1, "estudiantesToolStripMenuItem1");
+            this.estudiantesToolStripMenuItem1.Click += new System.EventHandler(this.estudiantesToolStripMenuItem1_Click);
             // 
             // optionsToolStripMenuItem
             // 

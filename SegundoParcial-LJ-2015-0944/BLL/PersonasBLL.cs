@@ -21,13 +21,13 @@ namespace SegundoParcial_LJ_2015_0944.BLL
                 Contex.Persona.Add(persona);
                 foreach (TiposDeTelefonoDetalle TdtDetalle in persona.Lista)
                     Contex.TdtDetalle.Add(TdtDetalle);
-
+                
                 Contex.SaveChanges();
                 paso = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("No se pudo Guardar: " + ex.ToString());
+                throw;
             }
 
             return paso;
@@ -62,9 +62,9 @@ namespace SegundoParcial_LJ_2015_0944.BLL
                 contex.SaveChanges();
                 paso = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("No se pudo Modificar: " + ex.ToString());
+                throw;
             }
 
             return paso;
@@ -84,28 +84,27 @@ namespace SegundoParcial_LJ_2015_0944.BLL
 
                 paso = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("No se pudo Eliminar: " + ex.ToString());
+                throw;
             }
 
             return paso;
         }
-
-        public static List<Personas> GetList(Expression<Func<Personas, bool>> filter)
+        
+        public static List<Personas> GetList(Expression<Func<Personas, bool>> criterioBusqueda)
         {
             List<Personas> persona = new List<Personas>();
-
             try
             {
                 Contexto contex = new Contexto();
-                persona = contex.Persona.Where(filter).ToList();
-
+                persona = contex.Persona.Where(criterioBusqueda).ToList();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("No se pudo Listar: " + ex.ToString());
+                throw;
             }
+
             return persona;
         }
     }

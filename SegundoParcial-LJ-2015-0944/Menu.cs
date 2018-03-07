@@ -1,4 +1,5 @@
-﻿using SegundoParcial_LJ_2015_0944.Registros;
+﻿using SegundoParcial_LJ_2015_0944.Consultas;
+using SegundoParcial_LJ_2015_0944.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,13 @@ namespace SegundoParcial_LJ_2015_0944
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void estudiantesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cPersonas cp = new cPersonas();
+            cp.MdiParent = this;
+            cp.Show();
         }
     }
 }

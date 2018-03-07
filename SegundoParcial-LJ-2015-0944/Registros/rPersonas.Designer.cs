@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.TiposDeTelefonoComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,16 +38,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.PersonasDataGridView = new System.Windows.Forms.DataGridView();
-            this.GuardarButton = new System.Windows.Forms.Button();
-            this.EliminarButton = new System.Windows.Forms.Button();
+            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.ValidarErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ConsultarButton = new System.Windows.Forms.Button();
+            this.EliminarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.TelefonoMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.IDNumericUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.PersonasDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // TiposDeTelefonoComboBox
@@ -125,30 +128,26 @@
             this.PersonasDataGridView.Name = "PersonasDataGridView";
             this.PersonasDataGridView.Size = new System.Drawing.Size(353, 169);
             this.PersonasDataGridView.TabIndex = 12;
+            this.PersonasDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PersonasDataGridView_CellContentClick);
             // 
-            // GuardarButton
+            // TelefonoMaskedTextBox
             // 
-            this.GuardarButton.Image = global::SegundoParcial_LJ_2015_0944.Properties.Resources.Save_as_37111;
-            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.GuardarButton.Location = new System.Drawing.Point(104, 345);
-            this.GuardarButton.Name = "GuardarButton";
-            this.GuardarButton.Size = new System.Drawing.Size(69, 56);
-            this.GuardarButton.TabIndex = 14;
-            this.GuardarButton.Text = "Guardar";
-            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(140, 126);
+            this.TelefonoMaskedTextBox.Mask = "(999) 000-0000";
+            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
+            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(78, 20);
+            this.TelefonoMaskedTextBox.TabIndex = 17;
             // 
-            // EliminarButton
+            // IDNumericUpDown
             // 
-            this.EliminarButton.Image = global::SegundoParcial_LJ_2015_0944.Properties.Resources.delete_remove_page_document_16678;
-            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.EliminarButton.Location = new System.Drawing.Point(205, 345);
-            this.EliminarButton.Name = "EliminarButton";
-            this.EliminarButton.Size = new System.Drawing.Size(69, 56);
-            this.EliminarButton.TabIndex = 15;
-            this.EliminarButton.Text = "Eliminar";
-            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.IDNumericUpDown.Location = new System.Drawing.Point(65, 11);
+            this.IDNumericUpDown.Name = "IDNumericUpDown";
+            this.IDNumericUpDown.Size = new System.Drawing.Size(33, 20);
+            this.IDNumericUpDown.TabIndex = 18;
+            // 
+            // ValidarErrorProvider
+            // 
+            this.ValidarErrorProvider.ContainerControl = this;
             // 
             // ConsultarButton
             // 
@@ -161,6 +160,33 @@
             this.ConsultarButton.Text = "Consultar";
             this.ConsultarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.ConsultarButton.UseVisualStyleBackColor = true;
+            this.ConsultarButton.Click += new System.EventHandler(this.ConsultarButton_Click);
+            // 
+            // EliminarButton
+            // 
+            this.EliminarButton.Image = global::SegundoParcial_LJ_2015_0944.Properties.Resources.delete_remove_page_document_16678;
+            this.EliminarButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EliminarButton.Location = new System.Drawing.Point(205, 345);
+            this.EliminarButton.Name = "EliminarButton";
+            this.EliminarButton.Size = new System.Drawing.Size(69, 56);
+            this.EliminarButton.TabIndex = 15;
+            this.EliminarButton.Text = "Eliminar";
+            this.EliminarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.EliminarButton.UseVisualStyleBackColor = true;
+            this.EliminarButton.Click += new System.EventHandler(this.EliminarButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Image = global::SegundoParcial_LJ_2015_0944.Properties.Resources.Save_as_37111;
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.GuardarButton.Location = new System.Drawing.Point(104, 345);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(69, 56);
+            this.GuardarButton.TabIndex = 14;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
             // NuevoButton
             // 
@@ -186,6 +212,7 @@
             this.AddButton.Text = "Add";
             this.AddButton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // Buscarbutton
             // 
@@ -198,21 +225,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
-            // 
-            // TelefonoMaskedTextBox
-            // 
-            this.TelefonoMaskedTextBox.Location = new System.Drawing.Point(140, 126);
-            this.TelefonoMaskedTextBox.Mask = "(999) 000-0000";
-            this.TelefonoMaskedTextBox.Name = "TelefonoMaskedTextBox";
-            this.TelefonoMaskedTextBox.Size = new System.Drawing.Size(78, 20);
-            this.TelefonoMaskedTextBox.TabIndex = 17;
-            // 
-            // IDNumericUpDown
-            // 
-            this.IDNumericUpDown.Location = new System.Drawing.Point(65, 11);
-            this.IDNumericUpDown.Name = "IDNumericUpDown";
-            this.IDNumericUpDown.Size = new System.Drawing.Size(33, 20);
-            this.IDNumericUpDown.TabIndex = 18;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // rPersonas
             // 
@@ -238,10 +251,11 @@
             this.Controls.Add(this.TiposDeTelefonoComboBox);
             this.Name = "rPersonas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Personas";
+            this.Text = "Registrar Personas";
             this.Load += new System.EventHandler(this.rPersonas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PersonasDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ValidarErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Button ConsultarButton;
         private System.Windows.Forms.MaskedTextBox TelefonoMaskedTextBox;
         private System.Windows.Forms.NumericUpDown IDNumericUpDown;
+        private System.Windows.Forms.ErrorProvider ValidarErrorProvider;
     }
 }
