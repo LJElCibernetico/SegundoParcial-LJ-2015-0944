@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace SegundoParcial_LJ_2015_0944.Registros
 {
     public partial class rPersonas : Form
