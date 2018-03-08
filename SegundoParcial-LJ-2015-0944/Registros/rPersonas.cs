@@ -42,11 +42,11 @@ namespace SegundoParcial_LJ_2015_0944.Registros
 
         private Personas LlenarClase(List<TiposDeTelefonoDetalle> lista)
         {
-            Personas p = new Personas();
+            Personas persona = new Personas();
             persona.personaID = (int)IDNumericUpDown.Value;
             persona.nombre = NombresTextBox.Text;
             persona.fecha = FechaDateTimePicker.Value;
-            p.Lista = lista;
+            persona.Lista = lista;
             return persona;
         }
     }
