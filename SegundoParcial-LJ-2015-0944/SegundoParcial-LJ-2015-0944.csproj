@@ -50,8 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\PersonasBLL.cs" />
+    <Compile Include="DAL\Contexto.cs" />
     <Compile Include="DataBase\CargarTiposDeTelefono.cs" />
-    <Compile Include="Entidades\Persona.cs" />
+    <Compile Include="Entidades\Personas.cs" />
+    <Compile Include="Entidades\TiposDeTelefono.cs" />
+    <Compile Include="Entidades\TiposDeTelefonoDetalle.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +102,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="Consultas\" />
-    <Folder Include="DAL\" />
     <Folder Include="Reportes\" />
   </ItemGroup>
   <ItemGroup>

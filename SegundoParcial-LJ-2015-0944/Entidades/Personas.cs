@@ -6,29 +6,28 @@ using System.Text;
 
 namespace SegundoParcial_LJ_2015_0944.Entidades
 {
-    public class Persona
+    public class Personas
     {
         [Key]
         public int personaID { get; set; }
 
         public String nombre { get; set; }
         public DateTime fecha { get; set; }
-        public String telefono { get; set; }
+        public virtual List<TiposDeTelefonoDetalle> Lista { get; set; }
 
-        public Persona(int personaID, string nombre, DateTime fecha, string telefono)
+        public Personas(int personaID, string nombre, DateTime fecha, List<TiposDeTelefonoDetalle> Lista)
         {
             this.personaID = personaID;
             this.nombre = nombre;
             this.fecha = fecha;
-            this.telefono = telefono;
         }
 
-        public Persona()
+        public Personas()
         {
             this.personaID = 0;
             this.nombre = String.Empty;
             this.fecha = DateTime.Now;
-            this.telefono = String.Empty;
+            Lista = new List<TiposDeTelefonoDetalle>();
         }
     }
 }

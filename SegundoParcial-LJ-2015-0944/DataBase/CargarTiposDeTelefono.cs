@@ -17,6 +17,7 @@ namespace SegundoParcial_LJ_2015_0944.DataBase
         {
             try
             {
+                /*Añadir la conexion de la base de datos que creo, aqui*/
                 cnn = new SqlConnection(@"Data Source=LJ-PC\SQLEXPRESS;Initial Catalog=segundoParcialDB;Integrated Security=True");
                 cnn.Open();
             }
